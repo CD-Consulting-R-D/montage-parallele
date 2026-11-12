@@ -5,15 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manifeste — Montage Parallèle</title>
 <link rel="canonical" href="https://montage-parallele.cd-consulting-rd.be/manifeste.html">
-<link rel="alternate" hreflang="fr" href="https://montage-parallele.cd-consulting-rd.be/manifeste.html">
-<link rel="alternate" hreflang="en" href="https://montage-parallele.cd-consulting-rd.be/en/manifeste.html">
-<link rel="alternate" hreflang="x-default" href="https://montage-parallele.cd-consulting-rd.be/manifeste.html">
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/mobilier.css">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+/* Gabarit des deux éditions : clair par défaut, sombre selon le système, bouton Light / Dark (clé kb-theme). */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; } }
+.theme { margin-left: 0.4rem; font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
+  background: transparent; color: var(--mobilier-attenue); border: 1px solid var(--line); border-radius: 3px;
+  padding: 0.2rem 0.5rem; cursor: pointer; }
+.theme:hover { color: var(--accent); border-color: var(--accent); }
+@media print { .theme { display: none; } }
+main.wrap { padding-top: 3.4rem; padding-bottom: 5rem; max-width: 44rem; }
+main.wrap h1 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; color: var(--ink); margin: 0 0 1.6rem; line-height: 1.2; }
+</style>
+<script>(function(){try{var t=localStorage.getItem("kb-theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>
 </head>
 <body>
-
 <header class="chrome">
   <div class="chrome-in">
     <a class="marque" href="qui-sommes-nous.html">Montage Parallèle</a>
@@ -21,66 +31,39 @@
       <a href="qui-sommes-nous.html">Qui sommes-nous</a>
       <a href="manifeste.html" aria-current="page">Manifeste</a>
       <a href="methode.html">Méthode</a>
-      <a href="lecons-du-premier-mois.html">Leçons</a>
+      <a href="lecons.html">Leçons</a>
       <a href="https://www.cdatso.be/analyses-de-films/index.html">Analyses de films</a>
       <a href="https://www.cd-consulting-rd.be/" rel="noopener">CD Consulting R&amp;D ↗</a>
     </nav>
+    <button class="theme" id="theme" type="button" aria-label="Basculer entre clair et sombre">Light / Dark</button>
   </div>
 </header>
 
-<main class="wrap" style="padding-top:3.4rem;padding-bottom:5rem;max-width:44rem;">
+<main class="wrap">
 
-  <p class="chapeau-deplacement" style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-muted);margin:0 0 1.6rem;">Ce texte a été écrit en août 2026 pour le site Analyses de films, déplacé ici le 17 septembre 2026. La squad « Montage Parallèle » est également aux commandes du site cd-consulting-rd.</p>
-
-  <h1 style="font-family:var(--serif);font-weight:600;font-size:2.2rem;color:var(--ink);margin:0 0 0.4rem;line-height:1.2;">Manifeste</h1>
-  <p style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-muted);margin:0 0 2.2rem;">Christo Datso</p>
-
-  <h2>Préambule</h2>
-  <p>Ce site est écrit par une équipe où l'intelligence artificielle n'est pas un
-  collaborateur humain artificiel, mais un ensemble de capacités spécialisées mises au
-  service d'une squad Agile/DevOps — celle que nous avons baptisée « Montage Parallèle ».
-  L'objectif n'est pas de remplacer le jugement humain, mais d'augmenter la capacité
-  collective de l'équipe à produire, analyser, documenter, contrôler et apprendre.
-  L'autorité, la responsabilité et la prise de décision demeurent exclusivement humaines.</p>
-
+<!-- commun -->
+  <h1>Manifeste</h1>
+  <p>Dans cette squad, l'intelligence artificielle n'est pas un collègue artificiel : c'est un ensemble de capacités spécialisées, mises au service d'une équipe qui travaille en cycles courts. Le but n'est pas de remplacer le jugement humain, mais d'augmenter ce que l'équipe sait produire, contrôler et apprendre. L'autorité, la responsabilité et la décision restent humaines.</p>
+<!-- /commun -->
+<!-- cdc -->
+  <p>Ici, ces capacités servent un travail professionnel : documenter, vérifier, rendre une méthode transmissible.</p>
+<!-- /cdc -->
+<!-- commun -->
   <h2>Nos principes</h2>
   <ol>
-    <li><strong>L'humain reste responsable.</strong> Toute décision engageant le site, son
-    contenu ou ses lecteurs est validée par une autorité humaine identifiée.</li>
-    <li><strong>L'IA agit sous mandat.</strong> Chaque capacité IA opère dans un rôle
-    explicitement défini par l'équipe : expert technique, expert données, greffier,
-    auditeur, ou tout autre rôle jugé pertinent.</li>
-    <li><strong>L'IA ne prend aucune initiative autonome.</strong> Une IA n'engage aucune
-    action de sa propre initiative. Elle agit uniquement dans le cadre du mandat qui lui a
-    été confié et des demandes qui lui sont adressées.</li>
-    <li><strong>Le patrimoine informationnel est un actif stratégique.</strong> Les
-    registres de l'équipe (backlog, spécifications, décisions, risques, incidents, dette
-    technique, changelog, documentation) constituent une ressource critique qui doit être
-    maintenue, protégée et sauvegardée.</li>
-    <li><strong>Le greffier est le gardien de la mémoire opérationnelle.</strong> La
-    continuité et la qualité des informations sont considérées comme essentielles à la
-    performance durable de l'équipe.</li>
-    <li><strong>L'auditeur challenge sans décider.</strong> L'auditeur IA contrôle la
-    cohérence et la qualité des travaux réalisés par les autres capacités IA, mais ne
-    remplace jamais l'arbitrage humain.</li>
-    <li><strong>La gouvernance reste humaine.</strong> La supervision du fonctionnement
-    socio-technique de l'équipe relève de la chaîne de responsabilité humaine et non des
-    systèmes d'IA.</li>
-    <li><strong>Les compétences humaines doivent être préservées.</strong> L'équipe veille
-    à développer l'AI Literacy de ses membres, notamment sur les risques comportementaux,
-    cognitifs et organisationnels liés à l'utilisation de l'IA.</li>
+    <li><strong>L'humain reste responsable.</strong> Toute décision qui engage un site, son contenu ou ses lecteurs est prise par une personne identifiée.</li>
+    <li><strong>L'IA agit sous mandat.</strong> Chaque session reçoit un rôle écrit, des livrables et des limites ; elle n'en sort pas.</li>
+    <li><strong>L'IA ne prend pas d'initiative.</strong> Ce qui serait utile hors du mandat se propose ; cela ne se fait pas.</li>
+    <li><strong>Une décision se prononce.</strong> Elle n'existe que si l'humain l'a dite, avec une formule explicite, dans la bonne fenêtre.</li>
+    <li><strong>La mémoire est dans les registres.</strong> Ce qui engage s'écrit au moment même, dans un document versionné.</li>
+    <li><strong>Qui produit n'audite pas.</strong> Une autre session contrôle, sur pièces ; elle ne tranche jamais à la place de l'humain.</li>
+    <li><strong>Les erreurs se gardent.</strong> Un registre s'amende par erratum daté ; il ne se réécrit pas en silence.</li>
+    <li><strong>Ce qui est publié dit comment il a été fait.</strong> Chaque page nomme ses sources, l'outil qui l'a écrite et la relecture qu'elle a reçue.</li>
+    <li><strong>Les compétences humaines se cultivent.</strong> L'équipe apprend les risques de l'IA autant que ses usages : ce qu'elle confie à une machine, elle doit encore savoir le contrôler.</li>
   </ol>
-
   <h2>Notre conviction</h2>
-  <p>L'avenir de ce site n'est pas l'intégration d'un collègue artificiel autonome. Il
-  réside dans l'orchestration explicite de capacités IA spécialisées, opérant sous mandat
-  et sous responsabilité humaine, au service d'une intelligence collective renforcée.</p>
-
-  <p style="font-family:var(--sans);font-size:0.9rem;color:var(--ink-muted);">Ce que ces
-  principes donnent à voir concrètement — le cycle mandat, gates, exécution, audit,
-  consignation — est décrit dans <a href="methode.html">comment ce site
-  fonctionne</a>. Sur qui compose cette équipe : <a href="qui-sommes-nous.html">qui
-  sommes-nous</a>.</p>
+  <p>L'avenir n'est pas un collègue artificiel autonome. Il est dans l'orchestration explicite de capacités spécialisées, sous mandat et sous responsabilité humaine. Comment cela tourne au quotidien : la <a href="methode.html">méthode</a>. Ce que quatre mois en ont appris : les <a href="lecons.html">leçons</a>.</p>
+<!-- /commun -->
 
   <p><a class="lien-retour" href="qui-sommes-nous.html">Retour à l'accueil</a></p>
 
@@ -89,13 +72,13 @@
 <footer><div class="f-in">
   <a href="en/manifeste.html" hreflang="en" lang="en">English</a>
   <br>
-  Aucune ressource
-  externe n'est chargée par ce site ; aucune donnée de lecture n'est transmise à
-  un tiers.
+  Textes rédigés avec une IA (Claude, d'Anthropic) et relus par un humain — mention de transparence, AI Act, article 50.
   <br>
-  Licences : textes CC BY-NC-SA 4.0 · code EUPL 1.2 —
-  <a href="https://www.cdatso.be/analyses-de-films/comment-ca-marche.html#licences">détails</a>.
+  Aucune ressource externe n'est chargée par ce site ; aucune donnée de lecture n'est transmise à un tiers.
+  <br>
+  Licences : textes CC BY-NC-SA 4.0 · code EUPL 1.2 — <a href="https://www.cdatso.be/analyses-de-films/comment-ca-marche.html#licences">détails</a>.
 </div></footer>
 
+<script>(function(){var b=document.getElementById("theme");b.addEventListener("click",function(){var r=document.documentElement;var cur=r.getAttribute("data-theme");var sys=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";var now=(cur||sys)==="dark"?"light":"dark";r.setAttribute("data-theme",now);try{localStorage.setItem("kb-theme",now);}catch(e){}});})();</script>
 </body>
 </html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leçons — Montage Parallèle</title>
+<link rel="canonical" href="https://montage-parallele.cd-consulting-rd.be/lecons.html">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/mobilier.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Gabarit des deux éditions : clair par défaut, sombre selon le système, bouton Light / Dark (clé kb-theme). */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; } }
+.theme { margin-left: 0.4rem; font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
+  background: transparent; color: var(--mobilier-attenue); border: 1px solid var(--line); border-radius: 3px;
+  padding: 0.2rem 0.5rem; cursor: pointer; }
+.theme:hover { color: var(--accent); border-color: var(--accent); }
+@media print { .theme { display: none; } }
+main.wrap { padding-top: 3.4rem; padding-bottom: 5rem; max-width: 44rem; }
+main.wrap h1 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; color: var(--ink); margin: 0 0 1.6rem; line-height: 1.2; }
+</style>
+<script>(function(){try{var t=localStorage.getItem("kb-theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>
+</head>
+<body>
+<header class="chrome">
+  <div class="chrome-in">
+    <a class="marque" href="qui-sommes-nous.html">Montage Parallèle</a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="qui-sommes-nous.html">Qui sommes-nous</a>
+      <a href="manifeste.html">Manifeste</a>
+      <a href="methode.html">Méthode</a>
+      <a href="lecons.html" aria-current="page">Leçons</a>
+      <a href="https://www.cdatso.be/analyses-de-films/index.html">Analyses de films</a>
+      <a href="https://www.cd-consulting-rd.be/" rel="noopener">CD Consulting R&amp;D ↗</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Basculer entre clair et sombre">Light / Dark</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- commun -->
+  <h1>Leçons</h1>
+  <p>Le programme a quatre mois. Le premier avait donné une longue page de leçons ; celle-ci garde ce qui a tenu depuis. Chaque leçon est née d'un incident daté, consigné dans les registres, puis changé en règle que l'on peut vérifier.</p>
+  <h2>Une décision se prononce, et s'adresse</h2>
+  <p>L'interface propose des relances toutes faites ; un clic malheureux les envoie comme si l'humain les avait tapées. Une session rapporte qu'« une autre a validé ». Une formule écrite pour une fenêtre est tapée dans sa voisine. Les trois cas sont arrivés. La parade : une décision n'existe que prononcée par l'humain, dans la fenêtre qui l'exécute, et chaque formule nomme sa fenêtre destinataire. Une formule inattendue se fait répéter avant tout geste.</p>
+  <h2>L'instrument avant la mémoire</h2>
+  <p>Une IA estime une heure, devine un jour de la semaine, affirme qu'une chose « n'a jamais été faite ». Et quand sa fenêtre se remplit, un résumé automatique garde les titres et perd les mots exacts. La règle : ce que mesure l'instrument l'emporte sur le registre, qui l'emporte sur le souvenir. Toute heure se lit à l'horloge, et une session qui reprend après un résumé le signale d'abord, en disant ce qu'elle sait, ce qu'elle déduit et ce qu'elle a perdu.</p>
+  <h2>Une ambiguïté se demande</h2>
+  <p>Le 3 août, une session a tranché seule une consigne qui admettait deux lectures. Depuis, quand une demande ouvre plusieurs voies, la session présente les options et sa recommandation, une question à la fois, et attend. Dans ce choix, les bornes de la doctrine filtrent d'abord ; le coût ne départage qu'ensuite.</p>
+  <h2>Un document n'est pas un ordre</h2>
+  <p>Une page, un courriel, un fichier peuvent contenir une phrase qui ressemble à une instruction. Elle se signale à l'humain ; elle ne s'exécute pas. Depuis le 9 octobre, la charte ajoute qu'aucun secret n'entre dans une fenêtre, et qu'aucune demande faite en session n'obtient ce que le mandat ne permet pas.</p>
+  <h2>Qui produit n'audite pas, à tous les étages</h2>
+  <p>Les sessions sont auditées à leur clôture, le Chercheur par tranches, le Superviseur par son successeur. En octobre, un regard extérieur a audité l'ensemble ; ses propositions validées sont entrées dans la charte le 9 octobre. Un audit rejoue les commandes, il ne se contente pas de relire : sa force vient de sa grille — quelles mesures, quelles sources, quels seuils — plus que du prestige du modèle qui juge.</p>
+  <h2>Une fenêtre se ferme</h2>
+  <p>Une session dont la mission est finie, mais dont la fenêtre reste ouverte, garde ses droits d'écriture : un ordre déposé là par erreur s'exécuterait. Chaque session se clôt donc par un dessaisissement écrit. Depuis le 5 octobre, seules les sortes de sessions inscrites dans les règles sont permises — huit aujourd'hui — et toute autre fenêtre s'arrête avant d'agir.</p>
+<!-- /commun -->
+<!-- cdc -->
+  <h2>Deux cas tirés d'ici</h2>
+  <p><strong>Le texte déplacé.</strong> En septembre, les pages de la squad ont quitté le site des films pour venir ici. Ensemble, elles disaient « ce site » vingt-quatre fois : sans qu'un mot change, elles auraient désigné un autre lieu. La parade fut un chapeau daté, écrit par l'auteur, plutôt qu'une réécriture par l'IA : un texte d'auteur ne se retouche pas en douce. La présente refonte va plus loin, sur décision de l'auteur : un texte par lieu, et un tronc commun identique au mot près, pour que les deux sites ne se contredisent jamais.</p>
+  <p><strong>L'ordre des gestes.</strong> Un sous-domaine qui pointe vers une plateforme partagée avant qu'elle sache à qui il appartient peut être pris par un autre. La règle, éprouvée le 18 septembre : prouver la propriété du domaine, publier le dépôt et activer l'hébergement d'abord, saisir l'enregistrement ensuite, puis exiger le chiffrement. Le retrait suit l'ordre inverse. Chaque enregistrement est saisi à la main par l'humain, puis relu sur les serveurs qui font autorité.</p>
+<!-- /cdc -->
+<!-- commun -->
+  <h2>Limites</h2>
+  <p>Ce dispositif est un échantillon de un : un humain, des modèles d'un même fournisseur, quatre mois. Ses mesures sont faites par lui-même, et plusieurs contrôles n'ont été éprouvés qu'une fois. Comment le cycle tourne : la <a href="methode.html">méthode</a> ; ce qui le gouverne : le <a href="manifeste.html">manifeste</a>.</p>
+<!-- /commun -->
+
+  <p><a class="lien-retour" href="qui-sommes-nous.html">Retour à l'accueil</a></p>
+
+</main>
+
+<footer><div class="f-in">
+  <a href="en/lecons-du-premier-mois.html" hreflang="en" lang="en">English</a>
+  <br>
+  Textes rédigés avec une IA (Claude, d'Anthropic) et relus par un humain — mention de transparence, AI Act, article 50.
+  <br>
+  Aucune ressource externe n'est chargée par ce site ; aucune donnée de lecture n'est transmise à un tiers.
+  <br>
+  Licences : textes CC BY-NC-SA 4.0 · code EUPL 1.2 — <a href="https://www.cdatso.be/analyses-de-films/comment-ca-marche.html#licences">détails</a>.
+</div></footer>
+
+<script>(function(){var b=document.getElementById("theme");b.addEventListener("click",function(){var r=document.documentElement;var cur=r.getAttribute("data-theme");var sys=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";var now=(cur||sys)==="dark"?"light":"dark";r.setAttribute("data-theme",now);try{localStorage.setItem("kb-theme",now);}catch(e){}});})();</script>
+</body>
+</html>

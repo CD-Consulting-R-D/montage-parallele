@@ -46,6 +46,25 @@ Le gabarit (chrome et feuilles de style) est **porté le 17/09/2026 et ne suit p
 - **`canonical` et `hreflang`** absolus sur `https://montage-parallele.cd-consulting-rd.be/` ; `x-default` = FR.
 - **Aucune ressource externe** n'est chargée.
 
+## Deux éditions (novembre 2026)
+
+Depuis novembre 2026, le site est **réécrit** et publié en **deux éditions** à partir d'une seule source :
+
+| Édition | Adresse | Dépôt |
+|---|---|---|
+| cd-consulting-rd.be | `https://montage-parallele.cd-consulting-rd.be/` | ce dépôt (racine) |
+| cdatso.be | `https://montage-parallele.cdatso.be/` | `cdatso/montage-parallele` |
+
+- **Source** : `source/` — quatre textes en Markdown à blocs `commun` / `cdatso` / `cdc` (convention : `source/README.md`) ;
+  le tronc commun est le même texte, au mot près, dans les deux éditions.
+- **Assemblage et contrôle** : `outils/` (mode d'emploi : `outils/README.md`). Les pages HTML de la racine sont des **sorties** :
+  on corrige la source, puis on relance le script.
+- **Pages** : `qui-sommes-nous.html`, `manifeste.html`, `methode.html`, `lecons.html` ; `lecons-du-premier-mois.html` est
+  désormais une page-renvoi vers `lecons.html`.
+- **`_config.yml`** : GitHub Pages ne sert ni `source/`, ni `outils/`, ni ce README.
+- Les sections « Contenu », « Provenance » et « Règles de tenue » ci-dessus décrivent l'état du 17/09/2026 et sont conservées
+  pour l'histoire ; l'en-tête daté des textes déplacés n'a plus d'objet, les textes ayant été réécrits.
+
 ## Licences
 
 Textes : CC BY-NC-SA 4.0 · code : EUPL 1.2 · logo et identité « Montage Parallèle » : tous droits réservés — détails :

@@ -1,0 +1,6 @@
+# GitHub Pages : ne servir que les pages du site. Les textes sources, les outils et le README restent
+# dans le dépôt (lisibles sur GitHub), mais ne deviennent pas des adresses du site.
+exclude:
+  - source
+  - outils
+  - README.md
