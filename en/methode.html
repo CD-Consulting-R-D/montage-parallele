@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- source-fr: comment-ca-marche.html 16a117cba5f304ed4487348d0adfd986c0362e83 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,9 +11,22 @@
 <link rel="stylesheet" href="../assets/fonts.css">
 <link rel="stylesheet" href="../assets/mobilier.css">
 <link rel="stylesheet" href="../assets/style.css">
+<style>
+/* Gabarit des deux éditions : clair par défaut, sombre selon le système, bouton Light / Dark (clé kb-theme). */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; } }
+.theme { margin-left: 0.4rem; font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
+  background: transparent; color: var(--mobilier-attenue); border: 1px solid var(--line); border-radius: 3px;
+  padding: 0.2rem 0.5rem; cursor: pointer; }
+.theme:hover { color: var(--accent); border-color: var(--accent); }
+@media print { .theme { display: none; } }
+main.wrap { padding-top: 3.4rem; padding-bottom: 5rem; max-width: 44rem; }
+main.wrap h1 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; color: var(--ink); margin: 0 0 1.6rem; line-height: 1.2; }
+</style>
+<script>(function(){try{var t=localStorage.getItem("kb-theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>
 </head>
 <body>
-
 <header class="chrome">
   <div class="chrome-in">
     <a class="marque" href="qui-sommes-nous.html">Montage Parallèle</a>
@@ -22,43 +34,29 @@
       <a href="qui-sommes-nous.html">Who we are</a>
       <a href="manifeste.html">Manifesto</a>
       <a href="methode.html" aria-current="page">Method</a>
-      <a href="lecons-du-premier-mois.html">Lessons</a>
+      <a href="lecons.html">Lessons</a>
       <a href="https://www.cdatso.be/analyses-de-films/en/index.html">Analyses de films</a>
       <a href="https://www.cd-consulting-rd.be/" rel="noopener">CD Consulting R&amp;D ↗</a>
     </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch between light and dark">Light / Dark</button>
   </div>
 </header>
 
-<main class="wrap" style="padding-top:3.4rem;padding-bottom:5rem;max-width:44rem;">
+<main class="wrap">
 
-  <p class="chapeau-deplacement" style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-muted);margin:0 0 1.6rem;">This text was written in August 2026 for the Analyses de films site and moved here on 17 September 2026. The “Montage Parallèle” squad also runs the cd-consulting-rd site.</p>
-
-  <h1 style="font-family:var(--serif);font-weight:600;font-size:2.2rem;color:var(--ink);margin:0 0 1.6rem;line-height:1.2;">Method</h1>
-
+<!-- commun -->
+  <h1>Method</h1>
   <h2>The cycle: mandate, gates, execution, audit, record</h2>
-  <p>Every unit of work follows the same life cycle. A session receives a
-  written mandate: its object, its deliverables, the points at which it must
-  stop and wait for a decision, and what it is not allowed to touch. It puts
-  forward a plan and waits for the go-ahead before acting. Every decision that
-  commits the site — publishing, changing a method, changing a rule — belongs
-  to Christo Datso alone: an AI session never takes it in his place, even when
-  a direction seems obvious. Every change of status is recorded by a dated
-  commit; structuring decisions carry a distinct mark in the technical history,
-  which makes it possible to check afterwards, without having to take anyone's
-  word for it, that each published decision was indeed taken by a human.
-  Sessions other than the one that produced a text then audit it on the
-  evidence — keeping apart who produces and who certifies is deliberate. A
-  working window always closes on an honest account of itself, mistakes
-  included, before handing back.</p>
-
+  <p>All work follows the same cycle. The Supervisor drafts a <strong>mandate</strong>: the object, the deliverables, what is forbidden, and the points where the session must stop. The human reads it and lodges it; the session opens by checking that the calibre actually running is the one intended. At each stop, it waits for a <strong>gate</strong>: an explicit formula, spoken by the human and addressed to the window that will carry it out — “go push … — window …”. Nothing is published without a gate. <strong>Execution</strong> proceeds in batches, each one measured before and after. Another session then <strong>audits</strong> the work on the evidence, replaying the checks. Finally, the Supervisor <strong>records</strong> it: in the version history, each decision carries a mark that shows who took it and when.</p>
   <h2>The registers</h2>
-  <p>The team's work rests on registers kept up to date: a record of tasks in
-  progress, a dated chronology of decisions and incidents, an inventory of
-  known risks and their safeguards, a log of errors and their corrections.
-  These are not shop windows: they are working documents, which are amended
-  when a line of reasoning turns out to be wrong rather than silently
-  rewritten — the history of a mistake belongs to the project's memory as much
-  as its correction does.</p>
+  <p>The squad works on versioned registers: the task tracker, the dated chronology of decisions, the inventory of risks and their safeguards, the collaboration charter, the lexicon. They are working documents: they are corrected by erratum, never rewritten. Every time that goes into them is read from the clock, never estimated.</p>
+  <h2>Rules a machine can check</h2>
+  <p>A rule that depends on a model's judgement does not survive a change of model. A rule that a script can check — a formula, a prefix, a count — holds. So every new rule must pass a test: which check would say it has been broken? And every new doctrine must answer another question: which existing arrangements does it make wrong?</p>
+<!-- /commun -->
+<!-- cdc -->
+  <h2>An example: how a knowledge-base entry is made</h2>
+  <p>An entry starts as Markdown, with its numbered sources. A generator publishes it by subtraction: the working header is removed, the body stays as it is. It writes the entry's line in the chapter's register, then rebuilds the chapter index and the site's home page from that register. Going online waits for its gate. Every claim points to a public source the reader can open again, and the list of sources closes the entry. The same generator serves all six chapters: a template fix is made once.</p>
+<!-- /cdc -->
 
   <p><a class="lien-retour" href="qui-sommes-nous.html">Back to the home page</a></p>
 
@@ -67,13 +65,13 @@
 <footer><div class="f-in">
   <a href="../methode.html" hreflang="fr" lang="fr">Français</a>
   <br>
-  This site loads no
-  external resource; nothing about what you read here is passed to a third
-  party.
+  Texts written with an AI (Claude, by Anthropic) and reviewed by a human — transparency notice, AI Act, Article 50.
   <br>
-  Licences: text CC BY-NC-SA 4.0 · code EUPL 1.2 —
-  <a href="https://www.cdatso.be/analyses-de-films/en/comment-ca-marche.html#licences">details</a>.
+  This site loads no external resource; no reading data is passed to any third party.
+  <br>
+  Licences: texts CC BY-NC-SA 4.0 · code EUPL 1.2 — <a href="https://www.cdatso.be/analyses-de-films/en/comment-ca-marche.html#licences">details</a>.
 </div></footer>
 
+<script>(function(){var b=document.getElementById("theme");b.addEventListener("click",function(){var r=document.documentElement;var cur=r.getAttribute("data-theme");var sys=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";var now=(cur||sys)==="dark"?"light":"dark";r.setAttribute("data-theme",now);try{localStorage.setItem("kb-theme",now);}catch(e){}});})();</script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- source-fr: manifeste.html 16a117cba5f304ed4487348d0adfd986c0362e83 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,9 +11,22 @@
 <link rel="stylesheet" href="../assets/fonts.css">
 <link rel="stylesheet" href="../assets/mobilier.css">
 <link rel="stylesheet" href="../assets/style.css">
+<style>
+/* Gabarit des deux éditions : clair par défaut, sombre selon le système, bouton Light / Dark (clé kb-theme). */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --ink: #ece8df; --ink-soft: #cfc9bd; --ink-muted: #a29c92; --paper: #161519; --paper-alt: #1e1d22; --line: #38352f; --accent: #d9a08c; --mobilier-filet: #38352f; --mobilier-attenue: #a29c92; } }
+.theme { margin-left: 0.4rem; font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
+  background: transparent; color: var(--mobilier-attenue); border: 1px solid var(--line); border-radius: 3px;
+  padding: 0.2rem 0.5rem; cursor: pointer; }
+.theme:hover { color: var(--accent); border-color: var(--accent); }
+@media print { .theme { display: none; } }
+main.wrap { padding-top: 3.4rem; padding-bottom: 5rem; max-width: 44rem; }
+main.wrap h1 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; color: var(--ink); margin: 0 0 1.6rem; line-height: 1.2; }
+</style>
+<script>(function(){try{var t=localStorage.getItem("kb-theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>
 </head>
 <body>
-
 <header class="chrome">
   <div class="chrome-in">
     <a class="marque" href="qui-sommes-nous.html">Montage Parallèle</a>
@@ -22,68 +34,39 @@
       <a href="qui-sommes-nous.html">Who we are</a>
       <a href="manifeste.html" aria-current="page">Manifesto</a>
       <a href="methode.html">Method</a>
-      <a href="lecons-du-premier-mois.html">Lessons</a>
+      <a href="lecons.html">Lessons</a>
       <a href="https://www.cdatso.be/analyses-de-films/en/index.html">Analyses de films</a>
       <a href="https://www.cd-consulting-rd.be/" rel="noopener">CD Consulting R&amp;D ↗</a>
     </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch between light and dark">Light / Dark</button>
   </div>
 </header>
 
-<main class="wrap" style="padding-top:3.4rem;padding-bottom:5rem;max-width:44rem;">
+<main class="wrap">
 
-  <p class="chapeau-deplacement" style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-muted);margin:0 0 1.6rem;">This text was written in August 2026 for the Analyses de films site and moved here on 17 September 2026. The “Montage Parallèle” squad also runs the cd-consulting-rd site.</p>
-
-  <h1 style="font-family:var(--serif);font-weight:600;font-size:2.2rem;color:var(--ink);margin:0 0 0.4rem;line-height:1.2;">Manifesto</h1>
-  <p style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-muted);margin:0 0 2.2rem;">Christo Datso</p>
-
-  <h2>Preamble</h2>
-  <p>This site is written by a team in which artificial intelligence is not an
-  artificial human colleague, but a set of specialised capabilities placed at
-  the service of an Agile/DevOps squad — the one we named “Montage Parallèle”.
-  The aim is not to replace human judgement, but to increase the team's
-  collective capacity to produce, analyse, document, check and learn.
-  Authority, responsibility and decision-making remain exclusively human.</p>
-
+<!-- commun -->
+  <h1>Manifesto</h1>
+  <p>In this squad, artificial intelligence is not an artificial colleague: it is a set of specialised capabilities, put to work for a team that moves in short cycles. The aim is not to replace human judgement, but to extend what the team is able to produce, check and learn. Authority, responsibility and decisions remain human.</p>
+<!-- /commun -->
+<!-- cdc -->
+  <p>Here, these capabilities serve professional work: documenting, verifying, making a method transferable.</p>
+<!-- /cdc -->
+<!-- commun -->
   <h2>Our principles</h2>
   <ol>
-    <li><strong>Humans remain responsible.</strong> Every decision that commits
-    the site, its content or its readers is approved by a named human
-    authority.</li>
-    <li><strong>AI acts under mandate.</strong> Each AI capability operates in a
-    role the team has defined explicitly: technical expert, data expert, clerk
-    of the record, auditor, or any other role held to be relevant.</li>
-    <li><strong>AI takes no initiative of its own.</strong> An AI commits to no
-    action of its own accord. It acts only within the mandate entrusted to it
-    and the requests addressed to it.</li>
-    <li><strong>The information estate is a strategic asset.</strong> The team's
-    registers — backlog, specifications, decisions, risks, incidents, technical
-    debt, changelog, documentation — are a critical resource, to be maintained,
-    protected and backed up.</li>
-    <li><strong>The clerk of the record keeps the operational memory.</strong>
-    Continuity and quality of information are held to be essential to the
-    team's lasting performance.</li>
-    <li><strong>The auditor challenges without deciding.</strong> The AI auditor
-    checks the coherence and the quality of the work done by the other AI
-    capabilities, but never stands in for human arbitration.</li>
-    <li><strong>Governance remains human.</strong> Supervision of how the team
-    works, as a socio-technical whole, belongs to the human chain of
-    responsibility and not to AI systems.</li>
-    <li><strong>Human skills must be preserved.</strong> The team sees to the AI
-    literacy of its members, in particular on the behavioural, cognitive and
-    organisational risks that come with using AI.</li>
+    <li><strong>The human remains responsible.</strong> Every decision that commits a site, its content or its readers is taken by an identified person.</li>
+    <li><strong>The AI acts under mandate.</strong> Each session receives a written role, deliverables and limits; it does not step outside them.</li>
+    <li><strong>The AI takes no initiative.</strong> What would be useful outside the mandate is proposed; it is not done.</li>
+    <li><strong>A decision is spoken.</strong> It exists only if the human has said it, with an explicit formula, in the right window.</li>
+    <li><strong>Memory lives in the registers.</strong> Whatever commits the team is written down at the moment it happens, in a versioned document.</li>
+    <li><strong>Whoever produces does not audit.</strong> Another session checks, on the evidence; it never decides in the human's place.</li>
+    <li><strong>Mistakes are kept.</strong> A register is amended by a dated erratum; it is never silently rewritten.</li>
+    <li><strong>What is published says how it was made.</strong> Each page names its sources, the tool that wrote it and the review it received.</li>
+    <li><strong>Human skills are cultivated.</strong> The team learns the risks of AI as much as its uses: whatever it hands over to a machine, it must still know how to check.</li>
   </ol>
-
-  <h2>What we hold</h2>
-  <p>The future of this site is not the arrival of an autonomous artificial
-  colleague. It lies in the explicit orchestration of specialised AI
-  capabilities, operating under mandate and under human responsibility, in the
-  service of a collective intelligence made stronger.</p>
-
-  <p style="font-family:var(--sans);font-size:0.9rem;color:var(--ink-muted);">What
-  these principles look like in practice — the cycle of mandate, gates,
-  execution, audit and record — is set out in <a href="methode.html">how
-  this site works</a>. On who makes up this team:
-  <a href="qui-sommes-nous.html">who we are</a>.</p>
+  <h2>Our conviction</h2>
+  <p>The future is not an autonomous artificial colleague. It lies in the explicit orchestration of specialised capabilities, under mandate and under human responsibility, in the service of a stronger collective intelligence. How it works day to day: the <a href="methode.html">method</a>. What four months have taught us: the <a href="lecons.html">lessons</a>.</p>
+<!-- /commun -->
 
   <p><a class="lien-retour" href="qui-sommes-nous.html">Back to the home page</a></p>
 
@@ -92,13 +75,13 @@
 <footer><div class="f-in">
   <a href="../manifeste.html" hreflang="fr" lang="fr">Français</a>
   <br>
-  This site loads no
-  external resource; nothing about what you read here is passed to a third
-  party.
+  Texts written with an AI (Claude, by Anthropic) and reviewed by a human — transparency notice, AI Act, Article 50.
   <br>
-  Licences: text CC BY-NC-SA 4.0 · code EUPL 1.2 —
-  <a href="https://www.cdatso.be/analyses-de-films/en/comment-ca-marche.html#licences">details</a>.
+  This site loads no external resource; no reading data is passed to any third party.
+  <br>
+  Licences: texts CC BY-NC-SA 4.0 · code EUPL 1.2 — <a href="https://www.cdatso.be/analyses-de-films/en/comment-ca-marche.html#licences">details</a>.
 </div></footer>
 
+<script>(function(){var b=document.getElementById("theme");b.addEventListener("click",function(){var r=document.documentElement;var cur=r.getAttribute("data-theme");var sys=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";var now=(cur||sys)==="dark"?"light":"dark";r.setAttribute("data-theme",now);try{localStorage.setItem("kb-theme",now);}catch(e){}});})();</script>
 </body>
 </html>
