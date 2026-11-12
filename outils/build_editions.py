@@ -317,7 +317,8 @@ def construire():
         ecrire(os.path.join(sortie, 'index.html'), index(hote), ecrits)
         ecrire(os.path.join(sortie, 'sitemap.xml'), sitemap(urls), ecrits)
         if ed == 'cdatso':
-            ecrire(os.path.join(sortie, 'CNAME'), 'montage-parallele.cdatso.be\n', ecrits)
+            # sans saut de ligne final : c'est la forme que GitHub Pages ecrit lui-meme quand on (re)saisit le domaine
+            ecrire(os.path.join(sortie, 'CNAME'), 'montage-parallele.cdatso.be', ecrits)
             ecrire(os.path.join(sortie, 'README.md'), README_CDATSO, ecrits)
             copier_assets(os.path.join(DEPOT, 'assets'), os.path.join(sortie, 'assets'), ecrits)
     return ecrits, comptes
